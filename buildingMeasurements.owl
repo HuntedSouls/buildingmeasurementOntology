@@ -1,14 +1,12 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements#"
-     xml:base="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements"
+<rdf:RDF xmlns="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#"
+     xml:base="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl">
-        <rdfs:comment>an ontology that defines the measurements of energy, water and gas consuption in a building</rdfs:comment>
-    </owl:Ontology>
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl"/>
     
 
 
@@ -23,9 +21,9 @@
     
 
 
-    <!-- http://qudt.org/2.1/vocab/unit -->
+    <!-- http://qudt.org/vocab/unit -->
 
-    <rdfs:Datatype rdf:about="http://qudt.org/2.1/vocab/unit"/>
+    <rdfs:Datatype rdf:about="http://qudt.org/vocab/unit"/>
     
 
 
@@ -37,36 +35,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasAddress -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasAddress">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasBuildingOfInterest -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasBuildingOfInterest">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##isBuildingOfInterest"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##isBuildingOfInterest -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##isBuildingOfInterest">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
-        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-    </owl:ObjectProperty>
     
 
 
@@ -94,7 +62,6 @@
     <!-- http://www.w3.org/ns/sosa/isFeatureOfInterestOf -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isFeatureOfInterestOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
         <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
     </owl:ObjectProperty>
@@ -119,6 +86,36 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasAddress -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasAddress">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasbuildingOfInterest -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasbuildingOfInterest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#isBuildingOfInterestOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#isBuildingOfInterestOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#isBuildingOfInterestOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -127,69 +124,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetName -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetName">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetNumber -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetNumber">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressZipcode -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressZipcode">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingAbreviation -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingAbreviation">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingName -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingName">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultValue -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultValue">
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultoUOM -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultoUOM">
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
-        <rdfs:range rdf:resource="http://qudt.org/2.1/vocab/unit"/>
-    </owl:DatatypeProperty>
     
 
 
@@ -202,6 +136,69 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressStreetName -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressStreetName">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressStreetNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressStreetNumber">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressZipcode -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressZipcode">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#buildingAbbreviation -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#buildingAbbreviation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#buildingName -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#buildingName">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultUOM -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultUOM">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://qudt.org/vocab/unit"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultValue -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultValue">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -210,50 +207,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasAddress"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##EnergyConsumption -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##EnergyConsumption">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##GasConsumption -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##GasConsumption">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##WaterConsumption -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##WaterConsumption">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
-    </owl:Class>
     
 
 
@@ -326,22 +279,23 @@
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address -->
 
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##EnergyConsumption"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##GasConsumption"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##WaterConsumption"/>
-        </owl:members>
-    </rdf:Description>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasAddress"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
 </rdf:RDF>
 
 
