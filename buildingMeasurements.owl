@@ -1,221 +1,350 @@
-@prefix : <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://github.com/HuntedSouls/buildingmeasurementOntology/blob/main/buildingMeasurements.owl> .
-
-<https://github.com/HuntedSouls/buildingmeasurementOntology/blob/main/buildingMeasurements.owl> rdf:type owl:Ontology ;
-                                                                                                 rdfs:comment "an ontology that defines the measurements of energy, water and gas consuption in a building" .
-
-#################################################################
-#    Datatypes
-#################################################################
-
-###  http://qudt.org/2.1/vocab/unit
-<http://qudt.org/2.1/vocab/unit> rdf:type rdfs:Datatype .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements#"
+     xml:base="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl">
+        <rdfs:comment>an ontology that defines the measurements of energy, water and gas consuption in a building</rdfs:comment>
+    </owl:Ontology>
+    
 
 
-#################################################################
-#    Object Properties
-#################################################################
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasAddress
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasAddress> rdf:type owl:ObjectProperty ;
-                                                                                       rdfs:domain <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building> ;
-                                                                                       rdfs:range <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address> .
-
-
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasBuildingOfInterest
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasBuildingOfInterest> rdf:type owl:ObjectProperty ;
-                                                                                                  rdfs:subPropertyOf <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
-                                                                                                  owl:inverseOf <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##isBuildingOfInterest> ;
-                                                                                                  rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
-                                                                                                  rdfs:range <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building> .
+    
 
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##isBuildingOfInterest
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##isBuildingOfInterest> rdf:type owl:ObjectProperty ;
-                                                                                                 rdfs:subPropertyOf <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> ;
-                                                                                                 rdfs:domain <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building> ;
-                                                                                                 rdfs:range <http://www.w3.org/ns/sosa/Observation> .
+    <!-- http://qudt.org/2.1/vocab/unit -->
+
+    <rdfs:Datatype rdf:about="http://qudt.org/2.1/vocab/unit"/>
+    
 
 
-###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
-<http://www.w3.org/ns/sosa/hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
-                                                 owl:inverseOf <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> ;
-                                                 rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
-                                                 rdfs:range <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-###  http://www.w3.org/ns/sosa/hasResult
-<http://www.w3.org/ns/sosa/hasResult> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf owl:topObjectProperty ;
-                                      owl:inverseOf <http://www.w3.org/ns/sosa/isResultOf> ;
-                                      rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
-                                      rdfs:range <http://www.w3.org/ns/sosa/Result> .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasAddress">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.w3.org/ns/sosa/isFeatureOfInterestOf
-<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> rdf:type owl:ObjectProperty ;
-                                                  rdfs:subPropertyOf owl:topObjectProperty ;
-                                                  rdfs:domain <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
-                                                  rdfs:range <http://www.w3.org/ns/sosa/Observation> .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasBuildingOfInterest -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasBuildingOfInterest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##isBuildingOfInterest"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.w3.org/ns/sosa/isResultOf
-<http://www.w3.org/ns/sosa/isResultOf> rdf:type owl:ObjectProperty ;
-                                       rdfs:domain <http://www.w3.org/ns/sosa/Result> ;
-                                       rdfs:range <http://www.w3.org/ns/sosa/Observation> .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##isBuildingOfInterest -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##isBuildingOfInterest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.w3.org/ns/sosa/observedProperty
-<http://www.w3.org/ns/sosa/observedProperty> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
-                                             rdfs:range <http://www.w3.org/ns/sosa/ObservableProperty> .
+    <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    </owl:ObjectProperty>
+    
 
 
-#################################################################
-#    Data properties
-#################################################################
+    <!-- http://www.w3.org/ns/sosa/hasResult -->
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetName
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetName> rdf:type owl:DatatypeProperty ;
-                                                                                              rdfs:domain <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address> ;
-                                                                                              rdfs:range xsd:string .
-
-
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetNumber
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetNumber> rdf:type owl:DatatypeProperty ;
-                                                                                                rdfs:domain <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address> ;
-                                                                                                rdfs:range xsd:string .
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressZipcode
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressZipcode> rdf:type owl:DatatypeProperty ;
-                                                                                           rdfs:domain <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address> ;
-                                                                                           rdfs:range xsd:string .
+    <!-- http://www.w3.org/ns/sosa/isFeatureOfInterestOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isFeatureOfInterestOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingAbreviation
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingAbreviation> rdf:type owl:DatatypeProperty ;
-                                                                                                rdfs:domain <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building> ;
-                                                                                                rdfs:range xsd:string .
+    <!-- http://www.w3.org/ns/sosa/isResultOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isResultOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingName
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingName> rdf:type owl:DatatypeProperty ;
-                                                                                         rdfs:domain <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building> ;
-                                                                                         rdfs:range xsd:string .
+    <!-- http://www.w3.org/ns/sosa/observedProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observedProperty">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:ObjectProperty>
+    
 
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultValue
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultValue> rdf:type owl:DatatypeProperty ;
-                                                                                        rdfs:domain <http://www.w3.org/ns/sosa/Result> ;
-                                                                                        rdfs:range xsd:float .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultoUOM
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultoUOM> rdf:type owl:DatatypeProperty ;
-                                                                                       rdfs:domain <http://www.w3.org/ns/sosa/Result> ;
-                                                                                       rdfs:range <http://qudt.org/2.1/vocab/unit> .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.w3.org/ns/sosa/resultTime
-<http://www.w3.org/ns/sosa/resultTime> rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
-                                       rdfs:range xsd:dateTime .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressStreetNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
 
 
-#################################################################
-#    Classes
-#################################################################
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressZipcode -->
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address> rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building> rdf:type owl:Class ;
-                                                                                     owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                                                           owl:onProperty <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasAddress> ;
-                                                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                           owl:onClass <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address>
-                                                                                                         ] .
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##addressZipcode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##EnergyConsumption
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##EnergyConsumption> rdf:type owl:Class ;
-                                                                                              rdfs:subClassOf <http://www.w3.org/ns/sosa/ObservableProperty> .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingAbreviation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingAbreviation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##GasConsumption
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##GasConsumption> rdf:type owl:Class ;
-                                                                                           rdfs:subClassOf <http://www.w3.org/ns/sosa/ObservableProperty> .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##buildingName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##WaterConsumption
-<http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##WaterConsumption> rdf:type owl:Class ;
-                                                                                             rdfs:subClassOf <http://www.w3.org/ns/sosa/ObservableProperty> .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultValue">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.w3.org/ns/sosa/FeatureOfInterest
-<http://www.w3.org/ns/sosa/FeatureOfInterest> rdf:type owl:Class ;
-                                              owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> ;
-                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                    owl:onClass <http://www.w3.org/ns/sosa/Observation>
-                                                                  ] .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultoUOM -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##resultoUOM">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://qudt.org/2.1/vocab/unit"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.w3.org/ns/sosa/ObservableProperty
-<http://www.w3.org/ns/sosa/ObservableProperty> rdf:type owl:Class .
+    <!-- http://www.w3.org/ns/sosa/resultTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/sosa/resultTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://www.w3.org/ns/sosa/Observation
-<http://www.w3.org/ns/sosa/Observation> rdf:type owl:Class ;
-                                        owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
-                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                              owl:onClass <http://www.w3.org/ns/sosa/FeatureOfInterest>
-                                                            ] ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://www.w3.org/ns/sosa/hasResult> ;
-                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                              owl:onClass <http://www.w3.org/ns/sosa/Result>
-                                                            ] ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://www.w3.org/ns/sosa/observedProperty> ;
-                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                              owl:onClass <http://www.w3.org/ns/sosa/ObservableProperty>
-                                                            ] ,
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty <http://www.w3.org/ns/sosa/resultTime> ;
-                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                              owl:onDataRange xsd:dateTime
-                                                            ] .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
 
 
-###  http://www.w3.org/ns/sosa/Result
-<http://www.w3.org/ns/sosa/Result> rdf:type owl:Class ;
-                                   owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                         owl:onProperty <http://www.w3.org/ns/sosa/isResultOf> ;
-                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                         owl:onClass <http://www.w3.org/ns/sosa/Observation>
-                                                       ] .
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
+    
 
 
-#################################################################
-#    General axioms
-#################################################################
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building -->
 
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##EnergyConsumption>
-                <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##GasConsumption>
-                <http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##WaterConsumption>
-              )
-] .
+    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Building">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##hasAddress"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##Address"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##EnergyConsumption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##EnergyConsumption">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##GasConsumption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##GasConsumption">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##WaterConsumption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##WaterConsumption">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/ObservableProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Result -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Result">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##EnergyConsumption"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##GasConsumption"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kritzj/ontologies/2022/3/buildingMeasurements##WaterConsumption"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
