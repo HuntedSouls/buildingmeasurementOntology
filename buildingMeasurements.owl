@@ -293,7 +293,9 @@
 
     <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest">
+        <owl:equivalentClass rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+    </owl:Class>
     
 
 
