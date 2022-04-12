@@ -38,6 +38,15 @@
     
 
 
+    <!-- http://qudt.org/schema/qudt/unit -->
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/unit">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:range rdf:resource="http://qudt.org/vocab/unit"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
@@ -181,15 +190,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultUOM -->
-
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultUOM">
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
-        <rdfs:range rdf:resource="http://qudt.org/vocab/unit"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultValue -->
 
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultValue">
@@ -210,10 +210,42 @@
     
 
 
+    <!-- http://qudt.org/vocab/unit -->
+
+    <owl:Class rdf:about="http://qudt.org/vocab/unit"/>
+    
+
+
+    <!-- http://qudt.org/vocab/unit/GigaJ -->
+
+    <owl:Class rdf:about="http://qudt.org/vocab/unit/GigaJ">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/vocab/unit"/>
+        <rdfs:label>GigaJ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/vocab/unit/KiloW-HR -->
+
+    <owl:Class rdf:about="http://qudt.org/vocab/unit/KiloW-HR">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/vocab/unit"/>
+        <rdfs:label>KiloW-HR</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://vocabs.lter-europe.net/EnvThes/30266 -->
 
     <owl:Class rdf:about="http://vocabs.lter-europe.net/EnvThes/30266">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://qudt.org/schema/qudt/unit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://qudt.org/vocab/unit/KiloW-HR"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>electrictiy consumption of building per month in kWh</rdfs:label>
     </owl:Class>
     
 
@@ -221,7 +253,15 @@
     <!-- http://vocabs.lter-europe.net/EnvThes/30279 -->
 
     <owl:Class rdf:about="http://vocabs.lter-europe.net/EnvThes/30279">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://qudt.org/schema/qudt/unit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>heat consumption of building per month in m3</rdfs:label>
     </owl:Class>
     
 
@@ -229,7 +269,15 @@
     <!-- http://vocabs.lter-europe.net/EnvThes/30282 -->
 
     <owl:Class rdf:about="http://vocabs.lter-europe.net/EnvThes/30282">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://qudt.org/schema/qudt/unit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>water consumption of building per month in m3</rdfs:label>
     </owl:Class>
     
 
@@ -315,6 +363,61 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3 -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/vocab/unit"/>
+        <rdfs:label>M3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://vocabs.lter-europe.net/EnvThes/30273 -->
+
+    <owl:Class rdf:about="https://vocabs.lter-europe.net/EnvThes/30273">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://qudt.org/schema/qudt/unit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://qudt.org/vocab/unit/GigaJ"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>cold energy consumption of building per month in GJ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://vocabs.lter-europe.net/EnvThes/30276 -->
+
+    <owl:Class rdf:about="https://vocabs.lter-europe.net/EnvThes/30276">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://qudt.org/schema/qudt/unit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>gas consumption of building per month in m3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://qudt.org/vocab/unit">
+        <rdfs:label>Unit-of-Measurement</rdfs:label>
+    </rdf:Description>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -326,9 +429,19 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://qudt.org/vocab/unit/GigaJ"/>
+            <rdf:Description rdf:about="http://qudt.org/vocab/unit/KiloW-HR"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://vocabs.lter-europe.net/EnvThes/30266"/>
             <rdf:Description rdf:about="http://vocabs.lter-europe.net/EnvThes/30279"/>
             <rdf:Description rdf:about="http://vocabs.lter-europe.net/EnvThes/30282"/>
+            <rdf:Description rdf:about="https://vocabs.lter-europe.net/EnvThes/30273"/>
+            <rdf:Description rdf:about="https://vocabs.lter-europe.net/EnvThes/30276"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
