@@ -210,17 +210,33 @@
     
 
 
+    <!-- http://vocabs.lter-europe.net/EnvThes/30266 -->
+
+    <owl:Class rdf:about="http://vocabs.lter-europe.net/EnvThes/30266">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vocabs.lter-europe.net/EnvThes/30279 -->
+
+    <owl:Class rdf:about="http://vocabs.lter-europe.net/EnvThes/30279">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vocabs.lter-europe.net/EnvThes/30282 -->
+
+    <owl:Class rdf:about="http://vocabs.lter-europe.net/EnvThes/30282">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
     
 
 
@@ -296,6 +312,25 @@
             </owl:Restriction>
         </owl:equivalentClass>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://vocabs.lter-europe.net/EnvThes/30266"/>
+            <rdf:Description rdf:about="http://vocabs.lter-europe.net/EnvThes/30279"/>
+            <rdf:Description rdf:about="http://vocabs.lter-europe.net/EnvThes/30282"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
