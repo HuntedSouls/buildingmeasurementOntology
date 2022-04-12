@@ -1,0 +1,461 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#"
+     xml:base="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://qudt.org/vocab/unit -->
+
+    <rdfs:Datatype rdf:about="http://qudt.org/vocab/unit"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://qudt.org/schema/qudt/unit -->
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/unit">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://qudt.org/vocab/unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isFeatureOfInterestOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isFeatureOfInterestOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isResultOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isResultOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/observedProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observedProperty">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#expressIn -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#expressIn">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:range rdf:resource="http://qudt.org/vocab/unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasAddress -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasAddress">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasbuildingOfInterest -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasbuildingOfInterest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#isBuildingOfInterestOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#isBuildingOfInterestOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#isBuildingOfInterestOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/resultTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/sosa/resultTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressStreetName -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressStreetName">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressStreetNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressStreetNumber">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressZipcode -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#addressZipcode">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#buildingAbbreviation -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#buildingAbbreviation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#buildingName -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#buildingName">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultValue -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#resultValue">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://qudt.org/vocab/unit -->
+
+    <owl:Class rdf:about="http://qudt.org/vocab/unit"/>
+    
+
+
+    <!-- http://qudt.org/vocab/unit/GigaJ -->
+
+    <owl:Class rdf:about="http://qudt.org/vocab/unit/GigaJ">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/vocab/unit"/>
+        <rdfs:label>GigaJ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://qudt.org/vocab/unit/KiloW-HR -->
+
+    <owl:Class rdf:about="http://qudt.org/vocab/unit/KiloW-HR">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/vocab/unit"/>
+        <rdfs:label>KiloW-HR</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocabs.lter-europe.net/EnvThes/30266 -->
+
+    <owl:Class rdf:about="http://vocabs.lter-europe.net/EnvThes/30266">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#expressIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://qudt.org/vocab/unit/KiloW-HR"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>electrictiy consumption of building per month in kWh</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocabs.lter-europe.net/EnvThes/30279 -->
+
+    <owl:Class rdf:about="http://vocabs.lter-europe.net/EnvThes/30279">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#expressIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>heat consumption of building per month in m3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vocabs.lter-europe.net/EnvThes/30282 -->
+
+    <owl:Class rdf:about="http://vocabs.lter-europe.net/EnvThes/30282">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#expressIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>water consumption of building per month in m3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/ObservableProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Result -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Result">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Building">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#hasAddress"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#Address"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3 -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/vocab/unit"/>
+        <rdfs:label>M3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://vocabs.lter-europe.net/EnvThes/30273 -->
+
+    <owl:Class rdf:about="https://vocabs.lter-europe.net/EnvThes/30273">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#expressIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://qudt.org/vocab/unit/GigaJ"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>cold energy consumption of building per month in GJ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://vocabs.lter-europe.net/EnvThes/30276 -->
+
+    <owl:Class rdf:about="https://vocabs.lter-europe.net/EnvThes/30276">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#expressIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:label>gas consumption of building per month in m3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://qudt.org/vocab/unit">
+        <rdfs:label>Unit-of-Measurement</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://qudt.org/vocab/unit/GigaJ"/>
+            <rdf:Description rdf:about="http://qudt.org/vocab/unit/KiloW-HR"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/HuntedSouls/buildingmeasurementOntology/main/buildingMeasurements.owl#qudt.org/vocab/unit/M3"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://vocabs.lter-europe.net/EnvThes/30266"/>
+            <rdf:Description rdf:about="http://vocabs.lter-europe.net/EnvThes/30279"/>
+            <rdf:Description rdf:about="http://vocabs.lter-europe.net/EnvThes/30282"/>
+            <rdf:Description rdf:about="https://vocabs.lter-europe.net/EnvThes/30273"/>
+            <rdf:Description rdf:about="https://vocabs.lter-europe.net/EnvThes/30276"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
